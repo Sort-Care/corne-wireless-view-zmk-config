@@ -33,7 +33,7 @@
 // | END  | PgDn| ←   | ↓   | →   |⌘⇧4  |   |  ?  |  ~  |SCL← |SCL↓ |SCL→ |     |
 // | ⌃↓   | ⌃↑  | ⌃←  |⌥SPC |⌘⌥C  | ⌃→  |   |  _  | -   | +   | =   | [   | ]   |
 //                    | GUI |     | SPC |   |SH+RT|     | ALT |
-                        display-name = "Lower";
+                        display-name = "Ctrl-Sym";
                         bindings = <
    &kp HOME   &kp PG_UP    &trans       &kp UP       &trans       &kp LG(LC(Q)) &kp PIPE  &kp FSLH      &kp BSLH     &msc SCRL_UP  &trans &trans
    &kp END    &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp LG(LS(N4)) &kp QMARK &kp TILDE     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans
@@ -46,19 +46,30 @@
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
 // |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-// |BTCLR |BT0  | BT1 | BT2 | BT3 | BT4 |   |     |  [  |  ]  |  {  |  }  |      |
+// |BTCLR |BT0  | BT1 | BT2 | BT3 | BT4 |   |TOG3 |  [  |  ]  |  {  |  }  |      |
 //                    | GUI |     | SPC |   |SH/RT |     | ALT |
-                        display-name = "Raise";
+                        display-name = "Num";
                         bindings = <
    &trans    &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
    &trans    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &trans
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans    &kp LBKT  &kp RBKT  &kp LBRC &kp RBRC &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &tog 3    &kp LBKT  &kp RBKT  &kp LBRC &kp RBRC &trans
                     	     &kp LGUI &trans   &kp SPACE   &trans   &trans    &kp RALT
                         >;
                 };
 
-                extra_1 {
-                        status = "reserved";
+                gaming_layer {
+// -----------------------------------------------------------------------------------------
+// | TAB  | Q   | W   | E   | R   | 1   |   |     |     |     |     |     |     |
+// | ESC  | A   | S   | D   | F   | 2   |   |     |     |     |     |     |     |
+// | CTRL | Z   | X   | C   | 3   | 4   |   |     |     |     |     |     |TOG3 |
+//                    | ALT | SPC | B   |   |     |     |     |
+                        display-name = "Gaming";
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp N1   &trans &trans &trans &trans &trans &trans
+   &kp ESC   &kp A &kp S &kp D &kp F &kp N2   &trans &trans &trans &trans &trans &trans
+   &kp LCTRL &kp Z &kp X &kp C &kp N3 &kp N4  &trans &trans &trans &trans &trans &tog 3
+                    &kp LALT &kp SPACE &kp B   &trans &trans &trans
+                        >;
                 };
 
                 extra_2 {
